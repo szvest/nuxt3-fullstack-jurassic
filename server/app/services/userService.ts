@@ -1,7 +1,7 @@
 import { RegistrationRequest } from '~~/types/IRegistration';
 import { H3Event } from 'h3';
 import { getUserBySessionToken } from './sessionService';
-import { isString } from '@vueuse/core';
+import { useToString } from '@vueuse/core';
 import { User } from '@prisma/client';
 import { IUser } from '~~/types/IUser';
 import { validate } from './validator';
@@ -35,7 +35,7 @@ export async function authCheck(event: H3Event): Promise<boolean> {
 
     const authToken = getCookie(event, 'auth_token') 
     
-    const hasAuthToken = isString(authToken)
+    const hasAuthToken = useToString(authToken)
 
     if(!hasAuthToken) {
         return false

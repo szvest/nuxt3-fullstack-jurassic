@@ -1,7 +1,8 @@
 
 // https://v3.nuxtjs.org/api/configuration/nuxt.config
 export default defineNuxtConfig({
-  modules: ['@nuxtjs/tailwindcss', '@nuxtjs/color-mode', '@nuxt/content', 'nuxt-icon'],
+  // modules: ['@nuxtjs/tailwindcss', '@nuxtjs/color-mode', '@nuxt/content', 'nuxt-icon'],
+  modules: ['@nuxtjs/tailwindcss', '@nuxtjs/color-mode', 'nuxt-icon'],
   tailwindcss: {
     cssPath: '~/assets/css/tailwind.css',
     configPath: 'tailwind.config.js',
@@ -12,17 +13,17 @@ export default defineNuxtConfig({
   colorMode: {
     classSuffix: ''
   },
-  content: {
-    highlight: {
-      theme: 'github-dark',
-      preload: [
-        'vue',
-      ]
-    },
-    navigation: {
-      fields: ['author', 'subject', 'position']
-    }
-  },
+  // content: {
+  //   highlight: {
+  //     theme: 'github-dark',
+  //     preload: [
+  //       'vue',
+  //     ]
+  //   },
+  //   navigation: {
+  //     fields: ['author', 'subject', 'position']
+  //   }
+  // },
   runtimeConfig: {
     private: {
       stripeSecretKey: process.env.STRIPE_SECRET_KEY,
